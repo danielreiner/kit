@@ -1,4 +1,11 @@
 Kit::Application.routes.draw do
+  
+  resources :pages, except: :show
+
+
+  resources :pages
+
+
   resources :events
 
 
@@ -6,6 +13,10 @@ Kit::Application.routes.draw do
 
 
   resources :artists
+  
+
+  get ':id', to: 'pages#show', as: :page
+
 
 
   # The priority is based upon order of creation:
