@@ -1,0 +1,7 @@
+<div id="nav">
+  <%= link_to_unless_current "Home", page_path("home") %> |
+  <%= link_to_unless_current "Artists", artists_path %> |
+  <%= link_to_unless_current "Events", page_path("about") %> |
+  <%= link_to_unless_current "About", page_path("about") %> |
+  <%= link_to_unless_current "Facebook", '#' %>
+</div>
