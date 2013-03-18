@@ -1,5 +1,8 @@
 Kit::Application.routes.draw do
   
+  resources :categories
+
+
   resources :pages, except: :show
 
 
