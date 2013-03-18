@@ -7,6 +7,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+    Artist.delete_all
     [
       {:first_name => "Darth",     :last_name => "Vader",		:nationality => "german", 	:description => "Tattooed chambray salvia meggings, lo-fi squid gastropub. Intelligentsia synth viral typewriter blue bottle vinyl. Deep v put a bird on it sartorial gluten-free pinterest messenger bag. Whatever before they sold out squid selfies swag. Semiotics messenger bag kale chips mumblecore. High life quinoa banksy, plaid hella blog mumblecore wolf squid. DIY pinterest fingerstache cray art party next level odd future.
 
@@ -23,6 +24,7 @@ Single-origin coffee polaroid blue bottle, selfies godard synth fanny pack forag
       Artist.find_or_create_by_first_name_and_last_name(attributes)
     end
 
+    Gallery.delete_all
     [
       {:name => "Galerie A", :url => "www.example.com", :street => "Winterfeldstr. 35", :zip_code => "10781", :city => "Berlin", :country => "Germany"   },
       {:name => "Galerie B", :url => "www.example.com", :street => "Winterfeldstr. 35", :zip_code => "10781", :city => "Berlin", :country => "Germany"	},
@@ -33,6 +35,7 @@ Single-origin coffee polaroid blue bottle, selfies godard synth fanny pack forag
       Gallery.find_or_create_by_name(attributes)
     end
 
+    Event.delete_all
     [
       {:name => "Event A", :subline => "best paintings throughout europe in one art fair", :artists => "Picasso, Rembrand, VanGogh und Cézanne", :zip_code => "10781", :city => "Berlin", :country => "Germany" },
       {:name => "Event B", :subline => "best paintings throughout europe in one art fair", :artists => "Picasso, Rembrand, VanGogh und Cézanne", :zip_code => "10781", :city => "Berlin", :country => "Germany" },
@@ -43,6 +46,7 @@ Single-origin coffee polaroid blue bottle, selfies godard synth fanny pack forag
       Event.find_or_create_by_name(attributes)
     end
 
+    Category.delete_all
     [
       {:name => "Pencil"},
       {:name => "Watercolour"},
@@ -53,8 +57,9 @@ Single-origin coffee polaroid blue bottle, selfies godard synth fanny pack forag
       Category.find_or_create_by_name(attributes)
     end
 
+    Page.delete_all
     [
-      {:name => "About",       :content => "Consequat ethical incididunt pariatur synth ullamco. Occupy voluptate swag actually mollit leggings shoreditch, do fap. Irure sustainable ethical narwhal nisi eu, banjo YOLO umami chillwave hella. Ea fanny pack aliqua fashion axe. Cred in shoreditch art party cliche, consequat ad. Actually post-ironic four loko ad. Chambray portland sriracha, placeat fixie selfies nostrud consequat deep v photo booth truffaut vero laborum small batch biodiesel.
+      {:name => "About", :permalink => "about",      :content => "Consequat ethical incididunt pariatur synth ullamco. Occupy voluptate swag actually mollit leggings shoreditch, do fap. Irure sustainable ethical narwhal nisi eu, banjo YOLO umami chillwave hella. Ea fanny pack aliqua fashion axe. Cred in shoreditch art party cliche, consequat ad. Actually post-ironic four loko ad. Chambray portland sriracha, placeat fixie selfies nostrud consequat deep v photo booth truffaut vero laborum small batch biodiesel.
 
 Deep v non wes anderson occupy cray est. Quinoa laboris organic, try-hard adipisicing blue bottle ethnic consectetur dolore church-key. Vice seitan sustainable consequat. Tousled elit meggings, VHS duis hoodie sartorial 3 wolf moon. Et consectetur locavore, try-hard high life wolf vice single-origin coffee. Ethical non esse, fingerstache williamsburg cosby sweater tousled minim yr godard stumptown DIY jean shorts sustainable. Elit kogi neutra Austin, pinterest williamsburg sartorial vegan voluptate.
 
@@ -63,7 +68,7 @@ Nihil echo park odio tonx, est single-origin coffee cliche ugh. VHS occaecat cul
 Do you need some dummy text? *sigh* Of course you do.
 
 I bet you still use Helvetica too…"},
-	  {:name => "Short Mission Statement",       :content => "Consequat ethical incididunt pariatur synth ullamco. Occupy voluptate swag actually mollit leggings shoreditch, do fap. Irure sustainable ethical narwhal nisi eu, banjo YOLO umami chillwave hella. Ea fanny pack aliqua fashion axe. Cred in shoreditch art party cliche, consequat ad. Actually post-ironic four loko ad. Chambray portland sriracha, placeat fixie selfies nostrud consequat deep v photo booth truffaut vero laborum small batch biodiesel.
+	  {:name => "Short Mission Statement", :permalink => "about",      :content => "Consequat ethical incididunt pariatur synth ullamco. Occupy voluptate swag actually mollit leggings shoreditch, do fap. Irure sustainable ethical narwhal nisi eu, banjo YOLO umami chillwave hella. Ea fanny pack aliqua fashion axe. Cred in shoreditch art party cliche, consequat ad. Actually post-ironic four loko ad. Chambray portland sriracha, placeat fixie selfies nostrud consequat deep v photo booth truffaut vero laborum small batch biodiesel.
 
 Deep v non wes anderson occupy cray est. Quinoa laboris organic, try-hard adipisicing blue bottle ethnic consectetur dolore church-key. Vice seitan sustainable consequat. Tousled elit meggings, VHS duis hoodie sartorial 3 wolf moon. Et consectetur locavore, try-hard high life wolf vice single-origin coffee. Ethical non esse, fingerstache williamsburg cosby sweater tousled minim yr godard stumptown DIY jean shorts sustainable. Elit kogi neutra Austin, pinterest williamsburg sartorial vegan voluptate.
 
@@ -72,7 +77,7 @@ Nihil echo park odio tonx, est single-origin coffee cliche ugh. VHS occaecat cul
 Do you need some dummy text? *sigh* Of course you do.
 
 I bet you still use Helvetica too…"},
-	  {:name => "Impressum", 	:content => "Angaben gemäß § 5 TMG:
+	  {:name => "Impressum", :permalink => "about",	:content => "Angaben gemäß § 5 TMG:
 
 Max Mustermann
 Musterstraße 111

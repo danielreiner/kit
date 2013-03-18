@@ -6,9 +6,6 @@ Kit::Application.routes.draw do
   resources :pages, except: :show
 
 
-  resources :pages
-
-
   resources :events
 
 
