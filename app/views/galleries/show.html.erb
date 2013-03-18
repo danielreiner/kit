@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @gallery.name %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @gallery.url %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @gallery.email %>
+</p>
+
+<p>
+  <b>Street:</b>
+  <%= @gallery.street %>
+</p>
+
+<p>
+  <b>Zip code:</b>
+  <%= @gallery.zip_code %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @gallery.city %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @gallery.country %>
+</p>
+
+
+<%= link_to 'Edit', edit_gallery_path(@gallery) %> |
+<%= link_to 'Back', galleries_path %>

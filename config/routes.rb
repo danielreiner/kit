@@ -1,4 +1,13 @@
 Kit::Application.routes.draw do
+  resources :events
+
+
+  resources :galleries
+
+
+  resources :artists
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

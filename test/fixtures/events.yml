@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  subline: MyString
+  artists: MyString
+  description: MyString
+  url: MyString
+  email: MyString
+  co: MyString
+  street: MyString
+  zip_code: MyString
+  city: MyString
+  country: MyString
+  start_date: 2013-03-18 16:01:55
+  end_date: 2013-03-18
+
+two:
+  name: MyString
+  subline: MyString
+  artists: MyString
+  description: MyString
+  url: MyString
+  email: MyString
+  co: MyString
+  street: MyString
+  zip_code: MyString
+  city: MyString
+  country: MyString
+  start_date: 2013-03-18 16:01:55
+  end_date: 2013-03-18
