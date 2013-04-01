@@ -57,8 +57,23 @@ Single-origin coffee polaroid blue bottle, selfies godard synth fanny pack forag
       Category.find_or_create_by_name(attributes)
     end
 
+    Footer.delete_all
+    [
+      {:content => "Test"}
+    ].each do |attributes|
+      Footer.find_or_create_by_content(attributes)
+    end
+
+    User.delete_all
+    [
+      {:email => 'd.reissner@gmail.com', :password => '5X5ist25', :password_confirmation => '5X5ist25'}
+    ].each do |attributes|
+      User.find_or_create_by_email(attributes)
+    end
+
     Page.delete_all
     [
+      {:name => "Home", :permalink => "home"},
       {:name => "About", :permalink => "about",      :content => "Consequat ethical incididunt pariatur synth ullamco. Occupy voluptate swag actually mollit leggings shoreditch, do fap. Irure sustainable ethical narwhal nisi eu, banjo YOLO umami chillwave hella. Ea fanny pack aliqua fashion axe. Cred in shoreditch art party cliche, consequat ad. Actually post-ironic four loko ad. Chambray portland sriracha, placeat fixie selfies nostrud consequat deep v photo booth truffaut vero laborum small batch biodiesel.
 
 Deep v non wes anderson occupy cray est. Quinoa laboris organic, try-hard adipisicing blue bottle ethnic consectetur dolore church-key. Vice seitan sustainable consequat. Tousled elit meggings, VHS duis hoodie sartorial 3 wolf moon. Et consectetur locavore, try-hard high life wolf vice single-origin coffee. Ethical non esse, fingerstache williamsburg cosby sweater tousled minim yr godard stumptown DIY jean shorts sustainable. Elit kogi neutra Austin, pinterest williamsburg sartorial vegan voluptate.

@@ -8,7 +8,7 @@ class CreateArts < ActiveRecord::Migration
       t.string :source
       t.string :date_of_origin
       t.string :file
-      t.references :attachable
+      t.references :attachable, :polymorphic => true
 
       t.timestamps
     end

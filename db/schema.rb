@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130318202907) do
+ActiveRecord::Schema.define(:version => 20130401173134) do
 
   create_table "artists", :force => true do |t|
     t.string   "first_name"
@@ -32,9 +32,14 @@ ActiveRecord::Schema.define(:version => 20130318202907) do
     t.string   "width"
     t.string   "source"
     t.string   "date_of_origin"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.string   "file"
+    t.integer  "attachable_id"
+    t.string   "attachable_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
+
+  add_index "arts", ["attachable_id"], :name => "index_arts_on_attachable_id"
 
   create_table "categories", :force => true do |t|
     t.string   "name"
