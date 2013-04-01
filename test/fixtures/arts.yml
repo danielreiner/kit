@@ -7,6 +7,8 @@ one:
   width: MyString
   source: MyString
   date_of_origin: MyString
+  file: MyString
+  attachable: 
 
 two:
   title: MyString
@@ -15,3 +17,5 @@ two:
   width: MyString
   source: MyString
   date_of_origin: MyString
+  file: MyString
+  attachable: 

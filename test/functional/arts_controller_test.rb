@@ -18,7 +18,7 @@ class ArtsControllerTest < ActionController::TestCase
 
   test "should create art" do
     assert_difference('Art.count') do
-      post :create, art: { date_of_origin: @art.date_of_origin, height: @art.height, source: @art.source, subline: @art.subline, title: @art.title, width: @art.width }
+      post :create, art: { date_of_origin: @art.date_of_origin, file: @art.file, height: @art.height, source: @art.source, subline: @art.subline, title: @art.title, width: @art.width }
     end
 
     assert_redirected_to art_path(assigns(:art))
@@ -35,7 +35,7 @@ class ArtsControllerTest < ActionController::TestCase
   end
 
   test "should update art" do
-    put :update, id: @art, art: { date_of_origin: @art.date_of_origin, height: @art.height, source: @art.source, subline: @art.subline, title: @art.title, width: @art.width }
+    put :update, id: @art, art: { date_of_origin: @art.date_of_origin, file: @art.file, height: @art.height, source: @art.source, subline: @art.subline, title: @art.title, width: @art.width }
     assert_redirected_to art_path(assigns(:art))
   end
 

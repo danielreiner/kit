@@ -7,8 +7,11 @@ class CreateArts < ActiveRecord::Migration
       t.string :width
       t.string :source
       t.string :date_of_origin
+      t.string :file
+      t.references :attachable
 
       t.timestamps
     end
+    add_index :arts, :attachable_id
   end
 end

@@ -30,6 +30,16 @@
   <%= @art.date_of_origin %>
 </p>
 
+<p>
+  <b>File:</b>
+  <%= @art.file %>
+</p>
+
+<p>
+  <b>Attachable:</b>
+  <%= @art.attachable %>
+</p>
+
 
 <%= link_to 'Edit', edit_art_path(@art) %> |
 <%= link_to 'Back', arts_path %>

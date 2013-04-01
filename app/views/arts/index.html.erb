@@ -8,6 +8,8 @@
     <th>Width</th>
     <th>Source</th>
     <th>Date of origin</th>
+    <th>File</th>
+    <th>Attachable</th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,6 +23,8 @@
     <td><%= art.width %></td>
     <td><%= art.source %></td>
     <td><%= art.date_of_origin %></td>
+    <td><%= art.file %></td>
+    <td><%= art.attachable %></td>
     <td><%= link_to 'Show', art %></td>
     <td><%= link_to 'Edit', edit_art_path(art) %></td>
     <td><%= link_to 'Destroy', art, method: :delete, data: { confirm: 'Are you sure?' } %></td>

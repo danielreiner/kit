@@ -7,6 +7,8 @@ gem 'rails', '3.2.12'
 
 gem 'pg'
 
+gem 'thin'
+
 gem 'rails_admin'
 
 # Gems used only for assets and not required
@@ -38,5 +40,6 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
+gem 'nested_form'
 
 gem "devise"
