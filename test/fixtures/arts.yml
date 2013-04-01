@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  subline: MyString
+  height: MyString
+  width: MyString
+  source: MyString
+  date_of_origin: MyString
+
+two:
+  title: MyString
+  subline: MyString
+  height: MyString
+  width: MyString
+  source: MyString
+  date_of_origin: MyString

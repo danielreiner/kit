@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130318173321) do
+ActiveRecord::Schema.define(:version => 20130318202907) do
 
   create_table "artists", :force => true do |t|
     t.string   "first_name"
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(:version => 20130318173321) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "arts", :force => true do |t|
+    t.string   "title"
+    t.string   "subline"
+    t.string   "height"
+    t.string   "width"
+    t.string   "source"
+    t.string   "date_of_origin"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "categories", :force => true do |t|
@@ -47,6 +58,12 @@ ActiveRecord::Schema.define(:version => 20130318173321) do
     t.date     "end_date"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "footers", :force => true do |t|
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "galleries", :force => true do |t|

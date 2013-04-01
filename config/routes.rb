@@ -1,5 +1,11 @@
 Kit::Application.routes.draw do
   
+  resources :arts
+
+
+  resources :footers
+
+
   devise_for :users
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'

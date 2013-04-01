@@ -1,0 +1,23 @@
+<h1>Listing footers</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @footers.each do |footer| %>
+  <tr>
+    <td><%= footer.content %></td>
+    <td><%= link_to 'Show', footer %></td>
+    <td><%= link_to 'Edit', edit_footer_path(footer) %></td>
+    <td><%= link_to 'Destroy', footer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Footer', new_footer_path %>
