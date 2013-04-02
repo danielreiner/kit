@@ -1,6 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-
 
 <div class="content">
   <%= render 'artists' %>
@@ -19,4 +16,11 @@
   <p>
     <%= @artist.description %>
   </p>
+</div>
+
+<div class="rightbar">
+  <% @artist.arts.each do |art| %>
+    <div class="image"><%= image_tag art.file_url.to_s %></div>
+  <% end %>
+  
 </div>

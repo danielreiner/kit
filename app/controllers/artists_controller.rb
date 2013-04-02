@@ -3,6 +3,7 @@ class ArtistsController < ApplicationController
   # GET /artists.json
   def index
     @artists = Artist.all
+    @artist = Artist.last
 
     respond_to do |format|
       format.html # index.html.erb
