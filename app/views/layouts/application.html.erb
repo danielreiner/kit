@@ -8,15 +8,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="wrapper">
 
-<%= render 'layouts/navigation' %>
+  	<div id="navigation">
+	  <%= render 'layouts/navigation' %>
+	</div
 
-<%= yield %>
-
-<footer>
-  <%= render 'layouts/footer' %>
-  <%= render 'layouts/footer_user_nav' %>
-</footer>
-
+	<%= yield %>
+	
+	<div id="footer">
+	  <%= render 'layouts/footer' %>
+	  <%= render 'layouts/footer_user_nav' %>
+	</div>
+  </div>
 </body>
 </html>

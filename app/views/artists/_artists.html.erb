@@ -1,0 +1,7 @@
+<div id="sidebar">
+<% @artists.each do |artist| %>
+  <tr>
+    <li><%= link_to artist.reverse_fullname, artist_path(artist) %></li>
+  </tr>
+<% end %>
+</div>

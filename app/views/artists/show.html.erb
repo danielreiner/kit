@@ -1,40 +1,21 @@
 <p id="notice"><%= notice %></p>
 
+<%= render 'artists' %>
+
+
 <p>
-  <b>First name:</b>
-  <%= @artist.first_name %>
+  <h3><%= @artist.fullname %></h3>
 </p>
 
 <p>
-  <b>Last name:</b>
-  <%= @artist.last_name %>
+  Alias: <%= @artist.alias %>
+
+  Nationality: <%= @artist.nationality %>
+
+  Birthday: <%= @artist.birthday %>
 </p>
 
 <p>
-  <b>Alias:</b>
-  <%= @artist.alias %>
-</p>
-
-<p>
-  <b>Nationality:</b>
-  <%= @artist.nationality %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @artist.category %>
-</p>
-
-<p>
-  <b>Birthday:</b>
-  <%= @artist.birthday %>
-</p>
-
-<p>
-  <b>Description:</b>
   <%= @artist.description %>
 </p>
 
-
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>
