@@ -24,6 +24,14 @@ p {
     width: 1000px;
 }
 
+#navigation {
+    float: left;
+    overflow:scroll;
+    height: 100px;
+    width: 100%;
+    clear: both;
+}
+
 #header {
     float: left;
     height: 75px;
@@ -31,16 +39,10 @@ p {
     background: #FF6633;
 }
 
-#navigation {
-    float: left;
-    height: 40px;
-    width: auto;
-}
-
 #content {
-    float: left;
+    float: right;
     background: #FFFFFF;
-    width: 850px;
+    width: 500px;
 }
 
 #sidebar {
@@ -48,11 +50,12 @@ p {
     width: 150px;
     height: 500px;
     float: left;
+
 }
 
 #footer {
     height: 40px;
-    width: auto;
+    width: 100%;
     clear: both;
 }
 

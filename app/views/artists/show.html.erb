@@ -1,21 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<%= render 'artists' %>
 
 
-<p>
-  <h3><%= @artist.fullname %></h3>
-</p>
-
-<p>
-  Alias: <%= @artist.alias %>
-
-  Nationality: <%= @artist.nationality %>
-
-  Birthday: <%= @artist.birthday %>
-</p>
-
-<p>
-  <%= @artist.description %>
-</p>
-
+<div class="content">
+  <%= render 'artists' %>
+  <p>
+    <h3><%= @artist.fullname %></h3>
+  </p>
+  
+  <p>
+    Alias: <%= @artist.alias %>
+  
+    Nationality: <%= @artist.nationality %>
+  
+    Birthday: <%= @artist.birthday %>
+  </p>
+  
+  <p>
+    <%= @artist.description %>
+  </p>
+</div>
