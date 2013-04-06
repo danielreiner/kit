@@ -1,7 +1,5 @@
-<div class="sidebar">
 <% @artists.each do |artist| %>
   <tr>
     <li><%= link_to_unless_current artist.reverse_fullname, artist_path(artist) %></li>
   </tr>
 <% end %>
-</div>

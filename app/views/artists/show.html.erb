@@ -1,26 +1,24 @@
-
-<div class="content">
-  <%= render 'artists' %>
-  <p>
-    <h3><%= @artist.fullname %></h3>
-  </p>
-  
-  <p>
-    Alias: <%= @artist.alias %>
-  
-    Nationality: <%= @artist.nationality %>
-  
-    Birthday: <%= @artist.birthday %>
-  </p>
-  
-  <p>
+<div class="container">
+  <div class="content">  
+    <strong><%= @artist.fullname %></strong>
+    
+      Alias: <%= @artist.alias %>
+    
+      Nationality: <%= @artist.nationality %>
+    
+      Birthday: <%= @artist.birthday %>
+    
+    
     <%= @artist.description %>
-  </p>
+  </div>
 </div>
 
-<div class="rightbar">
+<aside class="sidebar">
+  <%= render 'artists' %>
+</aside>
+
+<aside class="rightbar">
   <% @artist.arts.each do |art| %>
     <div class="image"><%= image_tag art.file_url.to_s %></div>
   <% end %>
-  
-</div>
+</aside>

@@ -9,16 +9,23 @@
 </head>
 <body>
   <div class="wrapper">
+    
+    <div class="navigation">
+      <%= render 'layouts/navigation' %>
+    </div>
+    
+    <section class="middle">
 
-  	<div class="navigation">
-	  <%= render 'layouts/navigation' %>
-	</div
-
-	<%= yield %>
-	
-	<div class="footer">
-	  <%= render 'layouts/footer' %>
-	  <%= render 'layouts/footer_user_nav' %>
-	</div>
+	    <%= yield %>
+    
+    </section> 
+  
+  </div>
+  
+    <footer class="footer">  
+      <%= render 'layouts/footer' %>
+      <%= render 'layouts/footer_user_nav' %> 
+    </footer>
+  
 </body>
 </html>
