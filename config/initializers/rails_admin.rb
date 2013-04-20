@@ -14,6 +14,8 @@ RailsAdmin.config do |config|
   # RailsAdmin may need a way to know who the current user is]
   config.current_user_method { current_user } # auto-generated
 
+  config.authorize_with :cancan
+
   # If you want to track changes on your models:
   # config.audit_with :history, 'User'
 
@@ -50,9 +52,9 @@ RailsAdmin.config do |config|
   # Now you probably need to tour the wiki a bit: https://github.com/sferik/rails_admin/wiki
   # Anyway, here is how RailsAdmin saw your application's models when you ran the initializer:
 
-config.model 'Footer' do
-  label_plural "Footer"
-end
+  config.model 'Footer' do
+    label_plural "Footer"
+  end
 
   ###  Artist  ###
 
@@ -62,6 +64,13 @@ end
 
   #   # Found associations:
 
+  # config.model User do
+  #   edit do
+  #     field :role do
+  #       partial "form"
+  #     end
+  #   end
+  # end
 
 
   #   # Found columns:
