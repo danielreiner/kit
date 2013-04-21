@@ -1,19 +1,32 @@
+<body onload="setupZoom();">
+  <div class="container">
+    <div class="content">  
+      <strong><%= @artist.fullname %></strong>
+      
+        Alias: <%= @artist.alias %>
+      
+        Nationality: <%= @artist.nationality %>
+      
+        Birthday: <%= @artist.birthday %>
+      
+      
+      <%= @artist.description %>
+  
+    </div>
+  </div>
 
-<div class="content">
-  <%= render 'artists' %>
-  <p>
-    <h3><%= @artist.fullname %></h3>
-  </p>
-  
-  <p>
-    Alias: <%= @artist.alias %>
-  
-    Nationality: <%= @artist.nationality %>
-  
-    Birthday: <%= @artist.birthday %>
-  </p>
-  
-  <p>
-    <%= @artist.description %>
-  </p>
-</div>
+  <aside class="sidebar">
+    <%= render 'artists' %>
+  </aside>
+
+  <aside class="rightbar">
+    <div class="images">
+      <% @artist.arts.each do |art| %>
+        <li>
+          <div class="img"><a href="<%= art.file_url.to_s %>" title="<%= art.title %></br><%= art.subline %>, <%= art.width %> x <%= art.height %>, <%= art.date_of_origin %>"><img src="<%= art.file_url if art.file? %>" width="152" title="<%= art.title %>"/></a></div>
+        </li>
+      <% end %>
+    </div>
+  </aside>
+
+</body>
