@@ -51,7 +51,9 @@ li a:hover {
 }
 
 .navigation {
-    height: 20px;
+    height: 70px;
+    margin-top: 6%;
+    padding-left: 6%;
 }
 
 .navigation ul li { 
@@ -86,7 +88,8 @@ li a:hover {
     background: #E9E4D8;
 }
 .content {
-    padding: 0 270px 0 270px;
+    width: 600px;
+    padding: 0 250px 0 210px;
 }
 
 /* Sidebar Left
@@ -100,6 +103,14 @@ li a:hover {
     padding: .2em 1em;
     margin-left: -100%;
     position: relative;
+}
+
+.sidebar-items {
+    padding-top: 10px;
+}
+
+.sidebar-item {
+    margin-bottom: .1em;
 }
 
 /* Sidebar Right

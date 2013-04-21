@@ -1,16 +1,16 @@
 <body onload="setupZoom();">
   <div class="container">
     <div class="content">  
-      <strong><%= @artist.fullname %></strong>
+      <h1><%= @artist.fullname %></h1></br>
       
-        Alias: <%= @artist.alias %>
+        Alias: <%= @artist.alias %></br>
       
-        Nationality: <%= @artist.nationality %>
+        Nationality: <%= @artist.nationality %></br>
       
-        Birthday: <%= @artist.birthday %>
+        Birthday: <%= @artist.birthday %></br>
       
       
-      <%= @artist.description %>
+      <p><%= simple_format @artist.description %></p>
   
     </div>
   </div>
