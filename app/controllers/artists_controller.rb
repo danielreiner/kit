@@ -2,8 +2,10 @@ class ArtistsController < ApplicationController
   # GET /artists
   # GET /artists.json
   def index
-    @artists = Artist.sorted
+    @artists = Artist.search(params[:search])
     @artist = Artist.last
+
+
 
     respond_to do |format|
       format.html # index.html.erb

@@ -17,4 +17,12 @@ class Artist < ActiveRecord::Base
     "#{last_name}, #{first_name}".strip
   end
 
+  def self.search(search)
+    if search
+      where('last_name ilike ?', "%#{search}%")  
+    else
+      scoped
+    end
+  end
+
 end
