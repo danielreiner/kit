@@ -2,9 +2,10 @@ class Artist < ActiveRecord::Base
 
   scope :sorted, :order => "last_name ASC"
 
-  attr_accessible :alias, :birthday, :category, :description, :first_name, :last_name, :nationality, :arts_attributes
+  attr_accessible :alias, :birthday, :category, :description, :first_name, :last_name, :nationality, :arts_attributes, :category_id
 
   has_many :arts, :as => :attachable
+  belongs_to :category
 
   accepts_nested_attributes_for :arts
 
@@ -23,6 +24,10 @@ class Artist < ActiveRecord::Base
     else
       scoped
     end
+  end
+
+  def category_id_enum
+    %w[admin guest]
   end
 
 end
