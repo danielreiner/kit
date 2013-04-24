@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  keywords: MyString
+  category_id: 1
+  nationality: MyString
+
+two:
+  keywords: MyString
+  category_id: 1
+  nationality: MyString

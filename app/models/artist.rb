@@ -26,8 +26,4 @@ class Artist < ActiveRecord::Base
     end
   end
 
-  def category_id_enum
-    %w[admin guest]
-  end
-
 end

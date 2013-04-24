@@ -1,8 +1,18 @@
-Search
+<div class='search'>
+    <a href="#show" class="hide" id="show">+</a>
+    <a href="#hide" class="show" id="hide">-</a>
 
-  <%= form_tag artists_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-  <% end %>
+    <div class="search-form">
+  		<%= form_tag artists_path, :method => 'get' do %>
+  		<p>Search:</p>
+  		<form>
+  		  <p><%= search_field_tag :search, params[:search], :placeholder => 'lastname' %></p>
+  		</form></br>
+
+  		<% end %>
+
+  		<%= link_to "Mehr Kriterien", new_search_path %>
+
+  	</div></br>
+</div>
+

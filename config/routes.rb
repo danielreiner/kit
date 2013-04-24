@@ -23,6 +23,9 @@ Kit::Application.routes.draw do
 
 
   resources :artists
+
+
+  resources :searches
   
 
   get ':id', to: 'pages#show', as: :page

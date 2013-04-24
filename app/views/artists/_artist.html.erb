@@ -1,0 +1,8 @@
+<div class="artist">
+  <h2><%= link_to artist.last_name, artist %></h2>
+  <div class="details">
+    <% if artist.category %>
+      | Category: <%= artist.category.name %>
+    <% end %>
+  </div>
+</div>
