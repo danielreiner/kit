@@ -9,6 +9,8 @@
 
   <script src = "/assets/js-global/FancyZoom.js"></script>
   <script src = "/assets/js-global/FancyZoomHTML.js"></script>
+  <script src = "/assets/popbox.js"></script>
+  <script src = "/assets/popbox.min.js"></script>
 </head>
 <body>
   <div class="wrapper">
@@ -20,6 +22,7 @@
     <section class="middle">
 
 	    <%= yield %>
+      <%= yield :scripts %>
     
     </section> 
   

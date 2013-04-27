@@ -1,18 +1,44 @@
-<div class='search'>
-    <a href="#show" class="hide" id="show">+</a>
-    <a href="#hide" class="show" id="hide">-</a>
+<body>
+  <h1>Artists</h1>
 
-    <div class="search-form">
-  		<%= form_tag artists_path, :method => 'get' do %>
-  		<p>Search:</p>
-  		<form>
-  		  <p><%= search_field_tag :search, params[:search], :placeholder => 'lastname' %></p>
-  		</form></br>
+  <div class='popbox'>
+    <a class='open' href='#'>
+      <img src='search.png' style='width:14px;position:relative;'> Search
+    </a>
 
-  		<% end %>
+    <div class='collapse'>
+      <div class='box'>
+        <div class='arrow'></div>
+        <div class='arrow-border'></div>
 
-  		<%= link_to "Mehr Kriterien", new_search_path %>
+        
+          
+          <%= form_tag artists_path, :method => 'get' do %>
+            <p>Search:</p>
+            <form>
+              <%= search_field_tag :search, params[:search], :placeholder => 'Name' %>
+            </form>
 
-  	</div></br>
-</div>
+          <% end %>
 
+          <%= link_to "Erweiterte Suche", new_search_path %>
+
+          
+        
+      </div>
+    </div>
+  </div>
+
+
+    
+
+
+<% content_for(:scripts) do %>
+<script type="text/javascript">
+    
+  $(window).load(function(){
+    $('.popbox').popbox();
+  });
+    
+</script>
+<% end %>
