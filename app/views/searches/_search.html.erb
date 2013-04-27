@@ -1,14 +1,15 @@
 <%= form_for @search do |f| %>
   <div class="field">
     <%= f.label :keywords %><br />
-    <%= f.text_field :keywords %>
+    <%= f.search_field :keywords %>
   </div>
   <div class="field">
     <%= f.label :category_id %><br />
     <%= f.collection_select :category_id, Category.order(:name), :id, :name, include_blank: true %>
   </div>
   <div class="field">
-    <%= f.label :nationality %><br />
-    <%= f.text_field :nationality %>
+    <%= f.label :nationality_id %><br />
+    <%= f.collection_select :nationality_id, Nationality.order(:name), :id, :name, include_blank: true %>
+  </div>
   <div class="actions"><%= f.submit "Search" %></div>
 <% end %>

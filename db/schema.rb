@@ -11,18 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423162939) do
+ActiveRecord::Schema.define(:version => 20130427164814) do
 
   create_table "artists", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "alias"
-    t.string   "nationality"
     t.date     "birthday"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.integer  "category_id"
+    t.integer  "nationality_id"
   end
 
   create_table "arts", :force => true do |t|
@@ -84,6 +84,13 @@ ActiveRecord::Schema.define(:version => 20130423162939) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "nationalities", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "artist_id"
+  end
+
   create_table "pages", :force => true do |t|
     t.string   "name"
     t.string   "permalink"
@@ -111,8 +118,9 @@ ActiveRecord::Schema.define(:version => 20130423162939) do
     t.string   "keywords"
     t.integer  "category_id"
     t.string   "nationality"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "nationality_id"
   end
 
   create_table "users", :force => true do |t|

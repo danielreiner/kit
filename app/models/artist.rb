@@ -2,10 +2,11 @@ class Artist < ActiveRecord::Base
 
   scope :sorted, :order => "last_name ASC"
 
-  attr_accessible :alias, :birthday, :category, :description, :first_name, :last_name, :nationality, :arts_attributes, :category_id
+  attr_accessible :alias, :birthday, :category, :description, :first_name, :last_name, :nationality, :arts_attributes, :category_id, :nationality_id
 
   has_many :arts, :as => :attachable
   belongs_to :category
+  belongs_to :nationality
 
   accepts_nested_attributes_for :arts
 
