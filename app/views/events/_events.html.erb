@@ -1,0 +1,47 @@
+<ul>Current events</ul>
+
+<% @current_events.each do |event| %>
+  <div class="sidebar-items">
+  	<div class="sidebar-item">
+  		<tr>
+  		  <li><%= link_to_unless_current event.name, event_path(event) %></li>
+  		</tr>
+  	</div>
+  </div>
+<% end %></br></br>
+
+<ul>Upcoming events</ul>
+
+<% @upcoming_events.each do |event| %>
+  <div class="sidebar-items">
+  	<div class="sidebar-item">
+  		<tr>
+  		  <li><%= link_to_unless_current event.name, event_path(event) %></li>
+  		</tr>
+  	</div>
+  </div>
+<% end %></br></br>
+
+<ul>Past events</ul>
+
+<% @past_events.each do |event| %>
+  <div class="sidebar-items">
+  	<div class="sidebar-item">
+  		<tr>
+  		  <li><%= link_to_unless_current event.name, event_path(event) %></li>
+  		</tr>
+  	</div>
+  </div>
+<% end %></br></br>
+
+<ul>All events</ul>
+
+<% @events.each do |event| %>
+  <div class="sidebar-items">
+  	<div class="sidebar-item">
+  		<tr>
+  		  <li><%= link_to_unless_current event.name, event_path(event) %></li>
+  		</tr>
+  	</div>
+  </div>
+<% end %>

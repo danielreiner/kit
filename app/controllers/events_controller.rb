@@ -3,6 +3,10 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+    @event = Event.current.last
+    @upcoming_events = Event.upcoming
+    @current_events = Event.current
+    @past_events = Event.past
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +18,10 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
+    @events = Event.all
+    @upcoming_events = Event.upcoming
+    @current_events = Event.current
+    @past_events = Event.past
 
     respond_to do |format|
       format.html # show.html.erb

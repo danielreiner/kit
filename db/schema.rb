@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427164814) do
+ActiveRecord::Schema.define(:version => 20130428222629) do
 
   create_table "artists", :force => true do |t|
     t.string   "first_name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20130427164814) do
     t.string   "attachable_type"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "medium"
   end
 
   add_index "arts", ["attachable_id"], :name => "index_arts_on_attachable_id"
@@ -52,7 +53,6 @@ ActiveRecord::Schema.define(:version => 20130427164814) do
     t.string   "name"
     t.string   "subline"
     t.string   "artists"
-    t.string   "description"
     t.string   "url"
     t.string   "email"
     t.string   "co"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20130427164814) do
     t.date     "end_date"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.text     "description"
   end
 
   create_table "footers", :force => true do |t|
