@@ -18,7 +18,7 @@
   }
 
     a:link {
-      color:#A09F95
+      color:#000;
     }
 
     .box {
@@ -60,4 +60,12 @@
       	position:absolute;
       	top:-12px;
       	z-index:1000;
+      }
+
+      .field {
+        margin-top: 10px;
+      }
+
+      .actions {
+        margin-top: 10px;
       }

@@ -2,11 +2,15 @@ class ArtistsController < ApplicationController
   # GET /artists
   # GET /artists.json
   def index
-    @artists = Artist.search(params[:search])
-    @artist = Artist.last
+    if params[:search]
+      @artist_search = Artist.search(params[:search])
+    else
+      @artist = Artist.last  
+    end
 
-
-
+    @artists = Artist.sorted
+    @search = Search.new
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @artists }
@@ -16,9 +20,14 @@ class ArtistsController < ApplicationController
   # GET /artists/1
   # GET /artists/1.json
   def show
-    @artist = Artist.find(params[:id])
-    @artists = Artist.sorted
+     if params[:search]
+      @artist_search = Artist.search(params[:search])
+    else
+      @artist = Artist.find(params[:id])
+    end
 
+    @artists = Artist.sorted
+    @search = Search.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @artist }

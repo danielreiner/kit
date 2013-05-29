@@ -24,7 +24,7 @@
     <div class="images">
       <% @artist.arts.each do |art| %>
         <li>
-          <div class="img"><a href="<%= art.file_url.to_s %>" title="<%= art.title %></br><%= art.subline %>, <%= art.width %> x <%= art.height %>, <%= art.date_of_origin %>"><img src="<%= art.file_url if art.file? %>" width="152" title="<%= art.title %>"/></a></div>
+          <div class="img"><a href="<%= art.file_url.to_s %>" title="<%= art.title %><br><%= art.subline %>, <%= art.width %> x <%= art.height %>, <%= art.date_of_origin %>"><img src="<%= art.file_url if art.file? %>" width="152" title="<%= art.title %>"/></a></div>
         </li>
       <% end %>
     </div>

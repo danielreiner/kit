@@ -26,6 +26,10 @@ p {
     padding: 10px;
 }
 
+h1 {
+    font-weight: bold;
+}
+
 
 li {
     color:#FF0000; /* selected */
@@ -104,43 +108,23 @@ li a:hover {
 }
 
 .sidebar-items {
-    padding-top: 10px;
+    margin-top: -30px
 }
 
 .sidebar-item {
+    padding: 5px;
     margin-bottom: .1em;
 }
 
 
 /* Search field
 -----------------------------------------------------------------------------*/
-/*
-input[type=search] {
-    width: 100px;
-    padding-left: 10px;
-    color: transparent;
-    cursor: pointer;
 
-
-    -moz-transition: all 0.5s linear;
-    -webkit-transition: all 0.5s linear;
-    -o-transition: all 0.5s linear;
-    -ms-transition: all 0.5s linear;
-    transition: all 0.5s linear;
+.search-item {
+    margin-bottom: 20px;
 }
 
-input[type=search]:hover {
-    background-color: #fff;
-}
-
-input[type=search]:focus {
-    width: 150px;
-    font-size: 13px;
-    color: #999;
-    background: #fff;
-}*/
-
-.search-form {
+/*.search-form {
     display:none; 
     height:auto;
     margin:0;
@@ -159,37 +143,35 @@ input[type=search]:focus {
     display:inline; 
 }
 
-/*style the (+) and (-) */
+
 .hide, .show {
     width: 30px;
     height: 30px;
     border-radius: 30px;
     font-size: 20px;
-    color: #fff;
-    text-shadow: 0 1px 0 #666;
+    color: black;
     text-align: center;
     text-decoration: none;
-    box-shadow: 1px 1px 2px #000;
     background: #cccbbb;
-    opacity: .95;
     margin-right: 0;
     float: left;
     margin-bottom: 25px;
 }
 
 .hide:hover, .show:hover {
-    color: #eee;
+    color: black;
     text-shadow: 0 0 1px #666;
     text-decoration: none;
-    box-shadow: 0 0 4px #222 inset;
-    opacity: 1;
-    margin-bottom: 25px;
 }
 
 .search-form p{
-    height:auto;
     margin:0;
 }
+
+.open a {
+    color: black;
+
+}*/
 
 
 /* Sidebar Right
