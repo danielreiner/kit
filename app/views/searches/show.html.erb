@@ -1,3 +1,44 @@
-<h1>Search Results</h1>
+<% if @search.artists %>
 
-<%= render @search.artists %>
+    <% @search.artists.each do |artist| %>
+      <div class="container">
+        <div class="content">
+
+          <h1><%= artist.fullname %></h1></br>
+        
+          Alias: <%= artist.alias %></br>
+      
+          Nationality: <%= artist.nationality %></br>
+      
+          Birthday: <%= artist.birthday %></br>  
+        
+          <p><%= simple_format artist.description %></p>
+
+        </div>
+      </div>
+    <% end %>
+
+	  <aside class="sidebar">  
+        <p><%= render 'searchpop' %></p></br>
+        <h1>Search Results</h1>
+		<p><%= render @search.artists %></p>
+	  </aside>
+
+<% else %>
+    <% @search.artists.each do |artist| %>
+      <div class="container">
+        <div class="content">
+
+          <h1>No Artists found</h1></br>
+
+        </div>
+      </div>
+    <% end %>
+
+	  <aside class="sidebar">  
+        <p><%= render 'searchpop' %></p></br>
+        <h1>Search Results</h1>
+		<p>No Artists found</p>
+	  </aside>
+<% end %>
+      

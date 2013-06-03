@@ -1,47 +1,27 @@
-<ul>Current events</ul>
+<p>
+  <ul><h1>Current events</h1></ul>
+  <% @current_events.each do |event| %>
+    <li><%= link_to_unless_current event.name, event_path(event) %></li>		
+  <% end %>
+</p>
 
-<% @current_events.each do |event| %>
-  <div class="sidebar-items">
-  	<div class="sidebar-item">
-  		<tr>
-  		  <li><%= link_to_unless_current event.name, event_path(event) %></li>
-  		</tr>
-  	</div>
-  </div>
-<% end %></br></br>
+<p>
+  <ul><h1>Upcoming events</h1></ul>
+  <% @upcoming_events.each do |event| %>
+    <li><%= link_to_unless_current event.name, event_path(event) %></li>
+  <% end %>
+</p>
 
-<ul>Upcoming events</ul>
+<p>
+  <ul><h1>Past events</h1></ul>
+  <% @past_events.each do |event| %>
+    <li><%= link_to_unless_current event.name, event_path(event) %></li>
+  <% end %>
+</p>
 
-<% @upcoming_events.each do |event| %>
-  <div class="sidebar-items">
-  	<div class="sidebar-item">
-  		<tr>
-  		  <li><%= link_to_unless_current event.name, event_path(event) %></li>
-  		</tr>
-  	</div>
-  </div>
-<% end %></br></br>
-
-<ul>Past events</ul>
-
-<% @past_events.each do |event| %>
-  <div class="sidebar-items">
-  	<div class="sidebar-item">
-  		<tr>
-  		  <li><%= link_to_unless_current event.name, event_path(event) %></li>
-  		</tr>
-  	</div>
-  </div>
-<% end %></br></br>
-
-<ul>All events</ul>
-
-<% @events.each do |event| %>
-  <div class="sidebar-items">
-  	<div class="sidebar-item">
-  		<tr>
-  		  <li><%= link_to_unless_current event.name, event_path(event) %></li>
-  		</tr>
-  	</div>
-  </div>
-<% end %>
+<p>
+  <ul><h1>All events</h1></ul>
+  <% @events.each do |event| %>
+    <li><%= link_to_unless_current event.name, event_path(event) %></li>
+  <% end %>
+</p>
