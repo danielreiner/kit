@@ -9,7 +9,6 @@ class Event < ActiveRecord::Base
 
   def event_address
     @address = []
-    @address << co unless co.nil?
     @address << street unless street.nil?
     @zip_and_city = []
     @zip_and_city << zip_code unless zip_code.nil?

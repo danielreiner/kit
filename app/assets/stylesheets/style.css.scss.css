@@ -77,20 +77,27 @@ li a:hover {
     height: 1%;
     position: relative;
 }
+
 .middle:after {
     content: '';
     clear: both;
     display: table;
 }
+
 .container {
     width: 100%;
     float: left;
     overflow: hidden;
     background: #E9E4D8;
 }
+
 .content {
     width: 600px;
     padding: 0 250px 0 210px;
+}
+
+.adress p {
+    padding: 10px 0px 0px 0px;
 }
 
 /* Sidebar Left

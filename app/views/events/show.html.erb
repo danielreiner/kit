@@ -1,18 +1,17 @@
 <div class="container">
   <div class="content">  
-    <h1><%= @event.name %></h1> <%= @event.start_date.to_s(:short) %> - <%= @event.end_date.to_s(:short) %></br>
-    <a href="<%= url_with_protocol(@event.url) %>" target="_blank"><%= @event.url %></a></br>
-    Participating artists: <%= @event.artists %></br>
+    <h1><%= @event.name.upcase %> (<%= @event.start_date.to_s(:short) %> - <%= @event.end_date.to_s(:short) %>)</h1> 
+    
+    <p>Participating artists: <%= @event.artists %></p>
 
     <p><%= simple_format @event.description %></p>
 
-    <div>
-  	  <%= @event.name %></br>
-  	  <a href="<%= url_with_protocol(@event.url) %>" target="_blank"><%= @event.url %></a></br>
-  	  c/o <%= @event.co %></br>
-  	  <%= @event.event_address %></br>
-  	  <%= mail_to @event.email %></br>
-	</div>
+    <div class="adress">
+  	  <p><%= @event.name.upcase %></p>
+  	  <p><a href="<%= url_with_protocol(@event.url) %>" target="_blank"><%= @event.url %></a></p>
+      <p><%= mail_to @event.email %></p>
+  	  <p><%= @event.event_address %></p>
+	  </div>
 
   
   </div>

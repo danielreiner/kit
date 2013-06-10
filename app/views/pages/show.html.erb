@@ -1,3 +1,25 @@
-<h1><%= @page.name %></h1>
 
-<%= simple_format @page.content %>
+<div class="container">
+        <div class="content">
+
+          <h1><%= @page.name %></h1>
+
+		  <%= simple_format @page.content %>
+
+        </div>
+      </div>
+
+      <aside class="sidebar">  
+        <p><%= render 'search' %></p></br>
+        <p><%= render 'artists' %></p>
+      </aside>
+
+      <aside class="rightbar">
+        <div class="images">
+          <% @artist.arts.each do |art| %>
+            <li>
+              <div class="img"><a href="<%= art.file_url.to_s %>" title="<%= art.title %></br><%= art.subline %>, <%= art.width %> x <%= art.height %>, <%= art.date_of_origin %>"><img src="<%= art.file_url if art.file? %>" width="152" title="<%= art.title %>"/></a></div>
+            </li>
+          <% end %>
+        </div>
+      </aside>
