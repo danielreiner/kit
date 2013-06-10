@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require nested_form
+//= require popbox
+//= js-global/FanzyZoom.js
 //= require_tree .
