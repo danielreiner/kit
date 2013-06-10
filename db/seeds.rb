@@ -66,7 +66,7 @@ Single-origin coffee polaroid blue bottle, selfies godard synth fanny pack forag
 
     User.delete_all
     [
-      {:email => 'd.reissner@gmail.com', :password => '5X5ist25', :password_confirmation => '5X5ist25'}
+      {:email => 'd.reissner@gmail.com', :password => '5X5ist25', :password_confirmation => '5X5ist25', :role => "admin"}
     ].each do |attributes|
       User.find_or_create_by_email(attributes)
     end
