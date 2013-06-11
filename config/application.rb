@@ -60,6 +60,7 @@ module Kit
 
     # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
     config.assets.precompile << '*.js'
+    config.action_view.javascript_expansions[:defaults] = %w(nested_form.js)
 
     config.assets.initialize_on_precompile = false
 
