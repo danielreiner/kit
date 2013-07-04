@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
-    @event = Event.current.last
+    @event = Event.last
     @upcoming_events = Event.upcoming
     @current_events = Event.current
     @past_events = Event.past
