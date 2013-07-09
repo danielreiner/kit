@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
-  attr_accessible :artists, :city, :co, :country, :description, :email, :end_date, :name, :start_date, :opening, :street, :subline, :url, :zip_code
+  attr_accessible :artists, :city, :co, :country, :description, :email, :end_date, :name, :start_date, :opening, :street, :subline, :url, :zip_code, :artist_id, :user_id
 
+  belongs_to :user
   has_and_belongs_to_many :artists
 
   scope :upcoming, -> { where(['DATE(start_date) > ?', Time.now.to_date]).order('start_date ASC') }

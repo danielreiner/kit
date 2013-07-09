@@ -2,7 +2,7 @@ class Artist < ActiveRecord::Base
 
   scope :sorted, :order => "last_name ASC"
 
-  attr_accessible :alias, :birthday, :description, :first_name, :last_name, :arts_attributes, :category_id, :nationality_id
+  attr_accessible :alias, :birthday, :description, :first_name, :last_name, :arts_attributes, :category_id, :nationality_id, :event_id
 
   has_many :arts, :as => :attachable
   has_and_belongs_to_many :galleries
@@ -10,7 +10,17 @@ class Artist < ActiveRecord::Base
   belongs_to :category
   belongs_to :nationality
 
+  belongs_to :user
+
+  validate :user_quota, :on => :create  
+
   accepts_nested_attributes_for :arts
+
+  def user_quota
+    if user.artists.count >= user.permission
+      errors.add(:base, "Exceeds allowed number of artists")
+    end
+  end
 
   
   def fullname
