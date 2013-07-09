@@ -13,10 +13,6 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     
-    <div class="navigation">
-      <%= render 'layouts/navigation' %>
-    </div>
-    
     <section class="middle">
 
 	    <%= yield %>
@@ -26,7 +22,10 @@
   
   </div>
   
-    <footer class="footer">  
+    <footer class="footer">
+      <div class="navigation">
+        <%= render 'layouts/navigation' %>
+      </div> 
       <%= render 'layouts/footer' %>
       <%= render 'layouts/footer_user_nav' %> 
     </footer>
