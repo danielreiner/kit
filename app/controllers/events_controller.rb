@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+
+  before_filter :get_logo
+  
   # GET /events
   # GET /events.json
   def index

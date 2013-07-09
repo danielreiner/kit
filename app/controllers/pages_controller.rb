@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+  
+  before_filter :get_logo
+  
   # GET /pages
   # GET /pages.json
   def index

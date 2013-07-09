@@ -1,4 +1,7 @@
 class ArtistsController < ApplicationController
+
+  before_filter :get_logo
+  
   # GET /artists
   # GET /artists.json
   def index
