@@ -122,6 +122,11 @@ li a:hover {
     margin-bottom: .1em;
 }
 
+.sidebar-nav ul li {
+    display: inline;
+    padding: .2em 1em;
+}
+
 
 /* Search field
 -----------------------------------------------------------------------------*/
