@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_one :gallery
-  has_many :artist
+  has_many :artists
   has_many :events
 
   def role_enum
@@ -19,6 +19,10 @@ class User < ActiveRecord::Base
 
   def role?(role)
     self.role == role.to_s
+  end
+
+  def may_create_artists
+    artists.count <= artist_tickets
   end
 
 end

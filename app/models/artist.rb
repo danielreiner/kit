@@ -2,24 +2,23 @@ class Artist < ActiveRecord::Base
 
   scope :sorted, :order => "last_name ASC"
 
-  attr_accessible :alias, :birthday, :description, :first_name, :last_name, :arts_attributes, :category_id, :nationality_id, :event_id
+  attr_accessible :alias, :birthday, :description, :first_name, :last_name, :arts_attributes, :category_id, :nationality_id, :event_id, :gallery_id
 
   has_many :arts, :as => :attachable
-  has_and_belongs_to_many :galleries
-  has_and_belongs_to_many :events
+  belongs_to :gallery
+  belongs_to :event
   belongs_to :category
   belongs_to :nationality
 
-  belongs_to :user
+  belongs_to :user, :touch => true
 
-  validate :user_quota, :on => :create  
+  validate :may_create_artist, :on => :create  
 
   accepts_nested_attributes_for :arts
 
-  def user_quota
-    if user.artists.count >= user.permission
-      errors.add(:base, "Exceeds allowed number of artists")
-    end
+  def may_create_artist
+    errors.add(:base, "Exceeds allowed number of artists") 
+    # unless user.may_create_artists
   end
 
   

@@ -57,6 +57,7 @@ class ArtistsController < ApplicationController
   # POST /artists.json
   def create
     @artist = Artist.new(params[:artist])
+    @artist.user_id = current_user
 
     respond_to do |format|
       if @artist.save
