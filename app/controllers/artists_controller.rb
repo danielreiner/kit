@@ -31,6 +31,7 @@ class ArtistsController < ApplicationController
 
     @artists = Artist.sorted
     @search = Search.new
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @artist }

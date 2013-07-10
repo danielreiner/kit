@@ -1,0 +1,19 @@
+<div class="container">
+        <div class="content">
+         blablabla
+   </div>
+ </div>
+
+<%= render 'layouts/sidebar' %>
+
+
+
+      <aside class="rightbar">
+        <div class="images">
+          <% @shouts.each do |shout| %>
+            <li>
+              <%= shout.message %>
+            </li>
+          <% end %>
+        </div>
+      </aside>

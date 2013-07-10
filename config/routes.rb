@@ -16,7 +16,7 @@ Kit::Application.routes.draw do
   resources :categories
 
 
-  resources :pages, except: :show
+  resources :pages
 
 
   resources :events
@@ -29,6 +29,9 @@ Kit::Application.routes.draw do
 
 
   resources :searches
+
+  
+  resources :welcome
   
 
   get ':id', to: 'pages#show', as: :page
@@ -84,7 +87,7 @@ Kit::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "pages#show", :id => 'home'
+  root :to => 'welcome#home'
 
   # See how all your routes lay out with "rake routes"
 
