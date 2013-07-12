@@ -21,8 +21,8 @@ class User < ActiveRecord::Base
     self.role == role.to_s
   end
 
-  def may_create_artists
-    artists.count <= artist_tickets
+  def may_create_artist?
+    !artist_tickets.nil? && artists.count < artist_tickets
   end
 
 end

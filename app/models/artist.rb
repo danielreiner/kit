@@ -9,16 +9,14 @@ class Artist < ActiveRecord::Base
   belongs_to :event
   belongs_to :category
   belongs_to :nationality
+  belongs_to :user
 
-  belongs_to :user, :touch => true
-
-  validate :may_create_artist, :on => :create  
+  validate :user_may_create_artist, :on => :create  
 
   accepts_nested_attributes_for :arts
 
-  def may_create_artist
-    errors.add(:base, "Exceeds allowed number of artists") 
-    # unless user.may_create_artists
+  def user_may_create_artist
+    errors.add(:base, "Exceeds allowed number of artists") unless user.may_create_artist?
   end
 
   

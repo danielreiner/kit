@@ -1,1 +1,3 @@
-<%= link_to image_tag(@logo_art.file_url), :action => 'home', :controller => 'welcome' %>
+<% if @logo_art %>
+  <%= link_to image_tag(@logo_art.file_url), :action => 'home', :controller => 'welcome' %>
+<% end %>
