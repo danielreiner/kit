@@ -2,7 +2,7 @@ class Artist < ActiveRecord::Base
 
   scope :sorted, :order => "last_name ASC"
 
-  attr_accessible :alias, :birthday, :description, :first_name, :last_name, :arts_attributes, :category_id, :nationality_id, :event_id, :gallery_id
+  attr_accessible :alias, :birthday, :description, :first_name, :last_name, :arts_attributes, :category_id, :nationality_id, :event_id, :gallery_id, :user_id
 
   has_many :arts, :as => :attachable
   belongs_to :gallery
@@ -16,7 +16,7 @@ class Artist < ActiveRecord::Base
   accepts_nested_attributes_for :arts
 
   def user_may_create_artist
-    errors.add(:base, "Exceeds allowed number of artists") unless user.may_create_artist?
+    errors.add(:base, "Exceeds allowed number of artists.") unless user.may_create_artist?
   end
 
   

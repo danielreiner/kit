@@ -1,5 +1,10 @@
 Kit::Application.routes.draw do
-  
+
+
+  devise_for :users
+
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   resources :shouts
 
 
@@ -7,11 +12,6 @@ Kit::Application.routes.draw do
 
 
   resources :footers
-
-
-  devise_for :users
-
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   resources :categories
 
@@ -87,7 +87,7 @@ Kit::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'welcome#home'
+  root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 

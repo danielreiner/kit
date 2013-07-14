@@ -58,9 +58,24 @@ RailsAdmin.config do |config|
 
   ###  Artist  ###
 
-  # config.model 'Artist' do
+  config.model 'Artist' do
 
   #   # You can copy this to a 'rails_admin do ... end' block inside your artist.rb model definition
+
+  edit do
+    field :first_name
+    field :last_name
+    field :nationality
+    field :category
+    field :birthday
+    field :description
+    
+    field :user_id, :hidden do
+      default_value do
+        bindings[:view]._current_user.id
+      end
+    end
+  end
 
   #   # Found associations:
 
@@ -109,7 +124,7 @@ RailsAdmin.config do |config|
   #     # also see the create, update, modal and nested sections, which override edit in specific cases (resp. when creating, updating, modifying from another model in a popup modal or modifying from another model nested form)
   #     # you can override a cross-section field configuration in any section with the same syntax `configure :field_name do ... end`
   #     # using `field` instead of `configure` will exclude all other fields and force the ordering
-  # end
+  end
 
 
   ###  Category  ###
