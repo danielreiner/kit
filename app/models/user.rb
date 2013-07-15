@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :role, :artist_tickets
   # attr_accessible :title, :body
 
-  has_one :gallery
+  has_many :galleries
   has_many :artists
   has_many :events
 

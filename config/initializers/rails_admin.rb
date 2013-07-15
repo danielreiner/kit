@@ -172,9 +172,25 @@ RailsAdmin.config do |config|
 
   ###  Event  ###
 
-  # config.model 'Event' do
+  config.model 'Event' do
 
   #   # You can copy this to a 'rails_admin do ... end' block inside your event.rb model definition
+
+  edit do
+    field :name
+    field :url
+    field :city
+    field :artist_id
+    field :start_date
+    field :end_date
+    field :opening
+    
+    field :user_id, :hidden do
+      default_value do
+        bindings[:view]._current_user.id
+      end
+    end
+  end
 
   #   # Found associations:
 
@@ -222,14 +238,31 @@ RailsAdmin.config do |config|
   #     # also see the create, update, modal and nested sections, which override edit in specific cases (resp. when creating, updating, modifying from another model in a popup modal or modifying from another model nested form)
   #     # you can override a cross-section field configuration in any section with the same syntax `configure :field_name do ... end`
   #     # using `field` instead of `configure` will exclude all other fields and force the ordering
-  # end
+  end
 
 
   ###  Gallery  ###
 
-  # config.model 'Gallery' do
+  config.model 'Gallery' do
+
 
   #   # You can copy this to a 'rails_admin do ... end' block inside your gallery.rb model definition
+
+  edit do
+    field :name
+    field :url
+    field :email
+    field :street
+    field :zip_code
+    field :city
+    field :country
+    
+    field :user_id, :hidden do
+      default_value do
+        bindings[:view]._current_user.id
+      end
+    end
+  end
 
   #   # Found associations:
 
@@ -271,7 +304,7 @@ RailsAdmin.config do |config|
   #     # also see the create, update, modal and nested sections, which override edit in specific cases (resp. when creating, updating, modifying from another model in a popup modal or modifying from another model nested form)
   #     # you can override a cross-section field configuration in any section with the same syntax `configure :field_name do ... end`
   #     # using `field` instead of `configure` will exclude all other fields and force the ordering
-  # end
+  end
 
 
   ###  Page  ###
