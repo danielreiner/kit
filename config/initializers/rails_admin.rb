@@ -63,8 +63,21 @@ RailsAdmin.config do |config|
   #   # You can copy this to a 'rails_admin do ... end' block inside your artist.rb model definition
 
     edit do
+
+      configure :alias do
+        visible false
+      end
+
+      configure :event do
+        visible false
+      end
+
+      configure :user do
+        visible false
+      end
       
       configure :user_id, :hidden do
+        visible true
         default_value do
           bindings[:view]._current_user.id
         end

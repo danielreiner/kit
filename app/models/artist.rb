@@ -11,6 +11,7 @@ class Artist < ActiveRecord::Base
   belongs_to :nationality
   belongs_to :user
 
+  validates :first_name, :last_name, presence: true
   validate :user_may_create_artist, :on => :create  
 
   accepts_nested_attributes_for :arts

@@ -21,7 +21,12 @@ class User < ActiveRecord::Base
     self.role == role.to_s
   end
 
+  def admin?
+    role == 'admin'
+  end
+
   def may_create_artist?
+    return true if admin?
     !artist_tickets.nil? && artists.count < artist_tickets
   end
 
