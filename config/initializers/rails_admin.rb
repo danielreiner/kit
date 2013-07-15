@@ -62,20 +62,14 @@ RailsAdmin.config do |config|
 
   #   # You can copy this to a 'rails_admin do ... end' block inside your artist.rb model definition
 
-  edit do
-    field :first_name
-    field :last_name
-    field :nationality
-    field :category
-    field :birthday
-    field :description
-    
-    field :user_id, :hidden do
-      default_value do
-        bindings[:view]._current_user.id
+    edit do
+      
+      configure :user_id, :hidden do
+        default_value do
+          bindings[:view]._current_user.id
+        end
       end
     end
-  end
 
   #   # Found associations:
 
