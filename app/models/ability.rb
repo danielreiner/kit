@@ -5,7 +5,8 @@ class Ability
     if user
       can :access, :rails_admin
       if user.role? :guest
-        can :read, [Artist, Event, Gallery]
+        can [:read, :create], [Artist, Event, Gallery], :user_id => user.id
+        can [:show, :update], [Artist, Event, Gallery], :user_id => user.id
       elsif user.role? :admin
         can :manage, :all
       end

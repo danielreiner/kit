@@ -12,4 +12,9 @@ class ApplicationController < ActionController::Base
     @logo_art = Art.where('title ILIKE ?', "website-logo").first
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:error] = "Access denied."
+    redirect_to root_url
+  end
+
 end
