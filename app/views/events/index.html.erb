@@ -1,14 +1,14 @@
 <div class="container">
-    <div class="content">  
-      <h1><%= @event.name %></h1> <%= @event.start_date.to_s(:short) %> - <%= @event.end_date.to_s(:short) %></br>
-      
-        <p><%= simple_format @event.description %></p>
-      
-        <%= @event.event_address %></br>
-  
-    </div>
+  <div class="content">  
+  	<p>
+  	  <% @events.each do |event| %>
+  		<h1><%= event.artist.fullname %> <%= event.start_date.to_s(:long) %> - <%= event.end_date.to_s(:long) %></h1>
+  		<%= event.name %>, <%= event.city %><br>
+  		Opening: <%= event.opening %><br>
+  		<%= link_to event.url, url_with_protocol(event.url) %>
+  	  <% end %>
+  	</p>
   </div>
+</div>
 
-  <aside class="sidebar">
-    <p><%= render 'events' %></p>
-  </aside>
+<%= render 'layouts/sidebar_events' %>

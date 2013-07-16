@@ -1,0 +1,6 @@
+<% @active_events.each do |event| %>
+  <p>
+    <%= event.name %><br>
+    <%= event.start_date.to_s(:short) %> - <%= event.end_date.to_s(:short) %>
+  </p>
+<% end %>
