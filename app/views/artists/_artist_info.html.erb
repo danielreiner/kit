@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="content">
+
+	Best Informations
+
+	<h1><%= artist.fullname %></h1>
+    <%= artist.nationality.name %> Born: <%= artist.birthday %></br>
+
+   	<%= artist.description %></br>
+
+  	<% unless artist.gallery.blank? %>
+  	 	<h2><%= artist.gallery.name %></h2>
+  	 	<%= artist.gallery.address %>
+  	<% end %>
+
+  	<% unless artist.events.blank? %>
+  		<% artist.events.each do |event| %> 
+  	 	  <h2><%= event.name %></h2>
+  	 	  <%= event.start_date.to_s(:long) %> - <%= event.end_date.to_s(:long) %><br>
+  		  <%= event.city %><br>
+  		  <%= link_to event.url, url_with_protocol(event.url) %>
+  		<% end %>
+  	<% end %>
+
+  </div>
+</div>

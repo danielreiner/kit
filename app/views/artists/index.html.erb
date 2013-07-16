@@ -5,21 +5,38 @@
       <% @artist_search.each do |artist| %>
       <div class="container">
         <div class="content">
-
-          <h1><%= artist.fullname %></h1></br>
-        
-          Alias: <%= artist.alias %></br>
       
-          Nationality: <%= artist.nationality %></br>
+        Best Informations
       
-          Birthday: <%= artist.birthday %></br>  
-        
-          <p><%= simple_format artist.description %></p>
-
+        <h1><%= artist.fullname %></h1>
+          <%= artist.nationality.name %> Born: <%= artist.birthday %></br>
+      
+          <%= artist.description %></br>
+      
+          <% unless artist.gallery.blank? %>
+            <h2><%= artist.gallery.name %></h2>
+            <%= artist.gallery.address %>
+          <% end %>
+      
+          <% unless artist.events.blank? %>
+            <% artist.events.each do |event| %> 
+              <h2><%= event.name %></h2>
+              <%= event.start_date.to_s(:long) %> - <%= event.end_date.to_s(:long) %><br>
+              <%= event.city %><br>
+              <%= link_to event.url, url_with_protocol(event.url) %>
+            <% end %>
+          <% end %>
+      
         </div>
       </div>
 
-      <aside class="sidebar">  
+      <aside class="sidebar">
+        <div class="sidebar-nav">
+          <ul>
+            <li><%= link_to "Artists", artists_path %></li>
+            <li><%= link_to "Events", events_path %></li>
+          </ul>
+        </div>
         <p><%= render 'searches/searchpop' %></p></br>
         <p><%= render 'layouts/artists' %></p>
       </aside>
@@ -37,34 +54,15 @@
 
   <% else %>
 
-      <div class="container">
-        <div class="content">
+    <%= render :partial => 'artist_info', locals: {artist: @artist} %>
 
-          <h1><%= @artist.fullname %></h1></br>
-            
-          Alias: <%= @artist.alias %></br>
-            
-          Nationality: <%= @artist.nationality %></br>
-            
-          Birthday: <%= @artist.birthday %></br>  
-            
-          <p><%= simple_format @artist.description %></p>
+    <aside class="sidebar">  
+      <p><%= render 'searches/searchpop' %></p></br>
+      <p><%= render 'layouts/artists' %></p>
+    </aside>
 
-        </div>
-      </div>
+    <%= render :partial => 'rightbar_art', locals: {artist: @artist} %>
 
-<%= render 'layouts/sidebar' %>
-
-      <aside class="rightbar">
-        <div class="images">
-          <% @artist.arts.each do |art| %>
-            <li>
-              <div class="img"><a href="<%= art.file_url.to_s %>" title="<%= art.title %></br><%= art.subline %>, <%= art.width %> x <%= art.height %>, <%= art.date_of_origin %>"><img src="<%= art.file_url if art.file? %>" width="150" title="<%= art.title %>"/></a></div>
-            </li>
-          <% end %>
-        </div>
-      </aside>
-
- <% end %>
+  <% end %>
 
 </body>
