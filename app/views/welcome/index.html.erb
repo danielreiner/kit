@@ -1,19 +1,28 @@
 <div class="container">
-        <div class="content">
-         blablabla
-   </div>
- </div>
+  <div class="content">
+    
+    <div class="adbox">
+      <% @ads.each do |ad| %>
+      <li>
+        <% if ad.artist %>
+          <%= link_to image_tag(ad.file_url), ad.artist %><%= ad.description %>
+        <% else %>
+          <%= link_to image_tag(ad.file_url), ad.event %><%= ad.description %>
+        <% end %>
+      </li>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <%= render 'layouts/sidebar' %>
 
-
-
-      <aside class="rightbar">
-        <div class="images">
-          <% @shouts.each do |shout| %>
-            <li>
-              <%= shout.message %>
-            </li>
-          <% end %>
-        </div>
-      </aside>
+<aside class="rightbar">
+  <div class="images">
+    <% @shouts.each do |shout| %>
+      <li>
+        <%= shout.message %>
+      </li>
+    <% end %>
+  </div>
+</aside>

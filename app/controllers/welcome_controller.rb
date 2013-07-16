@@ -6,6 +6,7 @@ class WelcomeController < ApplicationController
     @artist = Artist.last
     @artists = Artist.sorted
     @shouts = Shout.all
+    @ads = Ad.all
     @search = Search.new
 
     respond_to do |format|
