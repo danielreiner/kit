@@ -2,11 +2,11 @@ class Artist < ActiveRecord::Base
 
   scope :sorted, :order => "last_name ASC"
 
-  attr_accessible :alias, :birthday, :description, :first_name, :last_name, :arts_attributes, :category_id, :nationality_id, :event_id, :gallery_id, :user_id
+  attr_accessible :alias, :birthday, :description, :first_name, :last_name, :arts_attributes, :category_id, :nationality_id, :gallery_id, :user_id
 
   has_many :arts, :as => :attachable
+  has_many :events
   belongs_to :gallery
-  belongs_to :event
   belongs_to :category
   belongs_to :nationality
   belongs_to :user
@@ -20,7 +20,10 @@ class Artist < ActiveRecord::Base
     errors.add(:base, "Exceeds allowed number of artists.") unless user.may_create_artist?
   end
 
-  
+  def title
+    self.fullname
+  end 
+
   def fullname
     "#{first_name} #{last_name}".strip
   end

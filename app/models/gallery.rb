@@ -4,4 +4,8 @@ class Gallery < ActiveRecord::Base
   belongs_to :user
   has_and_belongs_to_many :artists
 
+  def title
+    self.name
+  end
+
 end

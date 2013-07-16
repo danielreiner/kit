@@ -187,12 +187,17 @@ RailsAdmin.config do |config|
     field :name
     field :url
     field :city
-    field :artist_id
+    field :artist
     field :start_date
     field :end_date
     field :opening
+
+    configure :user do
+      visible false
+    end
     
-    field :user_id, :hidden do
+    configure :user_id, :hidden do
+      visible true
       default_value do
         bindings[:view]._current_user.id
       end
