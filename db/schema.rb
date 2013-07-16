@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130709210713) do
+ActiveRecord::Schema.define(:version => 20130716175350) do
+
+  create_table "ads", :force => true do |t|
+    t.string   "title"
+    t.string   "type"
+    t.string   "file"
+    t.integer  "position"
+    t.text     "description"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "artist_id"
+    t.integer  "event_id"
+    t.integer  "attachable_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "ads", ["attachable_id"], :name => "index_ads_on_attachable_id"
 
   create_table "artists", :force => true do |t|
     t.string   "first_name"

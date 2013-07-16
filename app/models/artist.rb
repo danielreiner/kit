@@ -6,6 +6,7 @@ class Artist < ActiveRecord::Base
 
   has_many :arts, :as => :attachable
   has_many :events
+  has_many :ads
   belongs_to :gallery
   belongs_to :category
   belongs_to :nationality

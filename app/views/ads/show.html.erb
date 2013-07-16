@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @ad.title %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @ad.type %>
+</p>
+
+<p>
+  <b>File:</b>
+  <%= @ad.file %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @ad.position %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @ad.description %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @ad.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @ad.end_date %>
+</p>
+
+<p>
+  <b>Attachable:</b>
+  <%= @ad.attachable %>
+</p>
+
+
+<%= link_to 'Edit', edit_ad_path(@ad) %> |
+<%= link_to 'Back', ads_path %>

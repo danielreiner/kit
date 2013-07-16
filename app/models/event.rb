@@ -3,6 +3,7 @@ class Event < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :artist
+  has_many :ads
 
   scope :upcoming, -> { where(['DATE(start_date) > ?', Time.now.to_date]).order('start_date ASC') }
   scope :current,  -> { where(['DATE(start_date) <= ? AND DATE(end_date) >= ?', Time.now.to_date, Time.now.to_date]).order('start_date ASC') }
