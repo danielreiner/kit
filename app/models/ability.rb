@@ -7,6 +7,7 @@ class Ability
       if user.role? :guest
         can [:read, :create], [Artist, Event, Gallery], :user_id => user.id
         can [:show, :update], [Artist, Event, Gallery], :user_id => user.id
+        can :dashboard
       elsif user.role? :admin
         can :manage, :all
       end
