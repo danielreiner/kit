@@ -321,12 +321,20 @@ RailsAdmin.config do |config|
 
   ###  Page  ###
 
-  # config.model 'Page' do
+  config.model 'Page' do
 
   #   # You can copy this to a 'rails_admin do ... end' block inside your page.rb model definition
 
-  #   # Found associations:
-
+    edit do
+      field :name
+      field :permalink
+      field :content, :rich_editor do
+        config({
+          :insert_many => true
+        })
+      end
+    end
+  end
 
 
   #   # Found columns:
