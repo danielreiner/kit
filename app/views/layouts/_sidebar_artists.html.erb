@@ -1,10 +1,11 @@
 <aside class="sidebar"> 
   <div class="sidebar-nav">
-  <ul>
-    <li><%= link_to "Artists", artists_path %></li>
-    <li><%= link_to "Events", events_path %></li>
-  </ul>
+  	<%= render 'layouts/search' %>
+  	<ul>
+  	  <li><%= link_to "Artists", artists_path %></li>
+  	  <li><%= link_to "Events", events_path %></li>
+  	</ul>
   </div>
-     <p><%= render 'layouts/search' %></p></br>
+     
      <p><%= render 'layouts/artists' %></p>
   </aside>

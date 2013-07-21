@@ -12,6 +12,13 @@ class EventsController < ApplicationController
     @current_events = Event.current
     @past_events = Event.past
 
+    if params[:search]
+      @artist_search = Artist.search(params[:search])
+    else
+      @artist = Artist.last  
+    end
+    @search = Search.new
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }
@@ -26,6 +33,13 @@ class EventsController < ApplicationController
     @upcoming_events = Event.upcoming
     @current_events = Event.current
     @past_events = Event.past
+
+    if params[:search]
+      @artist_search = Artist.search(params[:search])
+    else
+      @artist = Artist.last  
+    end
+    @search = Search.new
 
     respond_to do |format|
       format.html # show.html.erb

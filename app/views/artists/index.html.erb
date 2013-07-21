@@ -9,12 +9,12 @@
         Best Informations
       
         <h1><%= artist.fullname %></h1>
-          <%= artist.nationality.name %> Born: <%= artist.birthday %></br>
+          <%= artist.nationality %> Born: <%= artist.birthday %></br>
       
           <%= artist.description %></br>
       
           <% unless artist.gallery.blank? %>
-            <h2><%= artist.gallery.name %></h2>
+            <h2><%= artist.gallery.name unless artist.gallery.name.blank? %></h2>
             <%= artist.gallery.address %>
           <% end %>
       
@@ -30,15 +30,16 @@
         </div>
       </div>
 
-      <aside class="sidebar">
-        <div class="sidebar-nav">
-          <ul>
-            <li><%= link_to "Artists", artists_path %></li>
-            <li><%= link_to "Events", events_path %></li>
-          </ul>
-        </div>
-        <p><%= render 'searches/searchpop' %></p></br>
-        <p><%= render 'layouts/artists' %></p>
+      <aside class="sidebar"> 
+      <div class="sidebar-nav">
+        <%= render 'layouts/search' %>
+        <ul>
+          <li><%= link_to "Artists", artists_path %></li>
+          <li><%= link_to "Events", events_path %></li>
+        </ul>
+      </div>
+     
+      <p><%= render 'layouts/artists' %></p>
       </aside>
 
       <aside class="rightbar">
@@ -56,8 +57,15 @@
 
     <%= render :partial => 'artist_info', locals: {artist: @artist} %>
 
-    <aside class="sidebar">  
-      <p><%= render 'searches/searchpop' %></p></br>
+    <aside class="sidebar"> 
+      <div class="sidebar-nav">
+        <%= render 'layouts/search' %>
+        <ul>
+          <li><%= link_to "Artists", artists_path %></li>
+          <li><%= link_to "Events", events_path %></li>
+        </ul>
+      </div>
+     
       <p><%= render 'layouts/artists' %></p>
     </aside>
 

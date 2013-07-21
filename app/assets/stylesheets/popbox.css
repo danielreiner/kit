@@ -9,12 +9,20 @@
   .collapse { position:relative; }
 
   .open {
+    float: left;
+    width: 15px;
+    height: 15px;
     text-decoration: none;
-    border:solid 1px #FFF;
-    border-radius:5px;
-    box-shadow: 0 0 5px #CCC;
-    background:#DCD9CC;
-    padding:5px;
+    background: #DCD9CC;
+    padding: 5px;
+    padding-left: 11px;
+    padding-right: 11px;
+    margin-left: -13px;
+    margin-top: -3px;
+    background-image: url('/search.png');
+    background-size: 92%;
+    border:solid 1px #BBB;
+    border-radius: 0;
   }
 
     a:link {
@@ -26,10 +34,9 @@
       display:none;
       background:#DCD9CC;
       width: 150px;
-      border:solid 1px #BBBBBB;
-      border-radius:5px;
-      box-shadow:0 0 15px #999;
       position:absolute;
+      margin-top: 25px; 
+      margin-left: -8px;
     }
 
       .box a.close {
@@ -39,7 +46,7 @@
        text-decoration:underline;
       }
 
-      .arrow {
+     /* .arrow {
       	width: 0;
       	height: 0;
       	border-left: 11px solid transparent;
@@ -49,9 +56,9 @@
       	left:1px;
       	top:-10px;
       	z-index:1001;
-      }
+      }*/
 
-      .arrow-border {
+      /*.arrow-border {
       	width: 0;
       	height: 0;
       	border-left: 11px solid transparent;
@@ -60,7 +67,7 @@
       	position:absolute;
       	top:-12px;
       	z-index:1000;
-      }
+      }*/
 
       .field {
         margin-top: 10px;

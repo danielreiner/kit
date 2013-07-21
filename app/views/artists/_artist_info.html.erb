@@ -9,7 +9,7 @@
    	<%= artist.description %></br>
 
   	<% unless artist.gallery.blank? %>
-  	 	<h2><%= artist.gallery.name %></h2>
+  	 	<h2><%= artist.gallery.name unless artist.gallery.name.blank? %></h2>
   	 	<%= artist.gallery.address %>
   	<% end %>
 

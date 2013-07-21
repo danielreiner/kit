@@ -53,7 +53,6 @@ li a:hover {
 }
 
 .navigation {
-    height: 70px;
     padding-left: 6%;
 }
 
@@ -74,7 +73,6 @@ li a:hover {
 .middle {
     width: 100%;
     padding: 0 0 100px;
-    height: 1%;
     position: relative;
 }
 
@@ -100,6 +98,18 @@ li a:hover {
     padding: 10px 0px 0px 0px;
 }
 
+.adbox {
+    margin-top: 30px;
+    margin-left: -8px;
+}
+
+.adbox img {
+    width: 300px;
+    float: left;
+    display: inline;
+    margin: 0 0 3px 0;
+}
+
 /* Sidebar Left
 -----------------------------------------------------------------------------*/
 .sidebar {
@@ -108,7 +118,9 @@ li a:hover {
     height: 500px;
     float: left;
     overflow:scroll;
-    padding: .2em 1em;
+    padding-top: .2em;
+    padding-left: 1em;
+    padding-right: 0;
     margin-left: -100%;
     position: relative;
 }
@@ -122,9 +134,17 @@ li a:hover {
     margin-bottom: .1em;
 }
 
+.sidebar-nav {
+}
+
 .sidebar-nav ul li {
+    float: left;
     display: inline;
-    padding: .2em 1em;
+    padding: 5px 10px 5px 10px;
+    margin-top: -3px;
+    height: 15px;
+    margin-bottom: 30px;
+    border:solid 1px #BBB;
 }
 
 
@@ -211,9 +231,6 @@ li a:hover {
 }
 
 .footer {
-    height: 40px;
     width: 100%;
-    clear: both;
-    position: relative;
 }
 
