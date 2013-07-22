@@ -21,3 +21,15 @@
 <aside class="sidebar">
   <p><%= render 'events' %></p>
 </aside>
+
+<aside class="rightbar">
+  <div class="images">
+    <% @shouts.each do |shout| %>
+    <h2>News-Feed</h2>
+      <li>
+        <%= shout.message %>
+        <hr class="style-two">
+      </li>
+    <% end %>
+  </div>
+</aside>

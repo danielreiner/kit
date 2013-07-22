@@ -11,6 +11,7 @@ class EventsController < ApplicationController
     @upcoming_events = Event.upcoming
     @current_events = Event.current
     @past_events = Event.past
+    @shouts = Shout.sorted
 
     if params[:search]
       @artist_search = Artist.search(params[:search])
@@ -33,6 +34,7 @@ class EventsController < ApplicationController
     @upcoming_events = Event.upcoming
     @current_events = Event.current
     @past_events = Event.past
+    @shouts = Shout.sorted
 
     if params[:search]
       @artist_search = Artist.search(params[:search])

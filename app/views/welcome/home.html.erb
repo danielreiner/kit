@@ -18,11 +18,14 @@
 <%= render 'layouts/artists_sidebar' %>
 
 <aside class="rightbar">
-  <div class="images">
     <% @shouts.each do |shout| %>
-    <h2>News-Feed</h2>
+    <div class="shouts-header">
+      <h2>News-Feed</h2>
+    </div>
       <li>
-        <%= shout.message %>
+        <div class="shouts">
+          <%= shout.message %>
+        </div>
       </li>
     <% end %>
   </div>

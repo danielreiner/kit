@@ -9,7 +9,7 @@
         Best Informations
       
         <h1><%= artist.fullname %></h1>
-          <%= artist.nationality %> Born: <%= artist.birthday %></br>
+          <%= artist.nationality.name unless artist.nationality.name.blank? %> Born: <%= artist.birthday %></br>
       
           <%= artist.description %></br>
       

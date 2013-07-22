@@ -4,16 +4,16 @@
 	Best Informations
 
 	<h1><%= artist.fullname %></h1>
-    <%= artist.nationality.name %> Born: <%= artist.birthday %></br>
+    <%= artist.nationality.name if artist.nationality_id? %> Born: <%= artist.birthday if artist.birthday? %></br>
 
-   	<%= artist.description %></br>
+   	<%= artist.description if artist.description? %></br>
 
   	<% unless artist.gallery.blank? %>
-  	 	<h2><%= artist.gallery.name unless artist.gallery.name.blank? %></h2>
+  	 	<h2><%= artist.gallery.name if artist.gallery_id? %></h2>
   	 	<%= artist.gallery.address %>
   	<% end %>
 
-  	<% unless artist.events.blank? %>
+  	<% if artist.events.count > 0 %>
   		<% artist.events.each do |event| %> 
   	 	  <h2><%= event.name %></h2>
   	 	  <%= event.start_date.to_s(:long) %> - <%= event.end_date.to_s(:long) %><br>

@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
   def index
     @artist = Artist.last
     @artists = Artist.sorted
-    @shouts = Shout.all
+    @shouts = Shout.sorted
     @ads = Ad.all
     @search = Search.new
 
