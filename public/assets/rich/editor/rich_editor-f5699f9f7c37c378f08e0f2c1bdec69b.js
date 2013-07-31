@@ -1,0 +1,2 @@
+// CKEditor plugin configuration
+function addQueryString(e,t){var n=[];if(!t)return e;for(var r in t)n.push(r+"="+encodeURIComponent(t[r]));return e+(e.indexOf("?")!=-1?"&":"?")+n.join("&")}CKEDITOR.plugins.addExternal("MediaEmbed","/assets/ckeditor-contrib/plugins/MediaEmbed/"),CKEDITOR.plugins.addExternal("richfile","/assets/ckeditor-contrib/plugins/richfile/");
