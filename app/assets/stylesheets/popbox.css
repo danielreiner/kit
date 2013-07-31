@@ -18,10 +18,9 @@
     padding-left: 11px;
     padding-right: 12px;
     margin-left: -13px;
-    margin-top: -3px;
     background-image: url('/search.png');
     background-size: 92%;
-    border:solid 1px #BBB;
+    border:solid 0px #BBB;
     border-radius: 0;
   }
 

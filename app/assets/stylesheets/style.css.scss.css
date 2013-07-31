@@ -136,18 +136,17 @@ li a:hover {
 }
 
 .sidebar-nav {
-    background: #E9E5D8;
 }
 
 .sidebar-nav ul li {
     background: #DCD9CC;
     float: left;
     display: inline;
-    padding: 5px 10px 5px 10px;
-    margin-top: -3px;
-    height: 15px;
+    padding: 5px 20px 5px 5px;
+    margin-top: 0;
+    height: 20px;
     margin-bottom: 30px;
-    border:solid 1px #BBB;
+    border-left:solid 1px #BBB;
 }
 
 
@@ -172,6 +171,7 @@ li a:hover {
     width: 150px;
     margin-left: -250px;
     position: relative;
+    overflow: hidden;
     border:solid 1px #BBB;
 }
 
@@ -211,6 +211,175 @@ hr.style-two {
     background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
     background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
 }
+
+/* ribbon style */
+
+ .ribbon-wrapper {
+    position: absolute;
+    border-top: 0px solid #ccc;
+    -moz-border-top-colors: rgba(0, 0, 0, 0.02) rgba(0, 0, 0, 0.04) rgba(0, 0, 0, 0.06) rgba(0, 0, 0, 0.08) rgba(0, 0, 0, 0.10) rgba(0, 0, 0, 0.12) rgba(0, 0, 0, 0.14) rgba(0, 0, 0, 0.16) rgba(0, 0, 0, 0.18) rgba(0, 0, 0, 0.20);
+    -webkit-border-top-colors: rgba(0, 0, 0, 0.02) rgba(0, 0, 0, 0.04) rgba(0, 0, 0, 0.06) rgba(0, 0, 0, 0.08) rgba(0, 0, 0, 0.10) rgba(0, 0, 0, 0.12) rgba(0, 0, 0, 0.14) rgba(0, 0, 0, 0.16) rgba(0, 0, 0, 0.18) rgba(0, 0, 0, 0.20);
+}
+  .ribbon-front {
+    background-color: #DCD9CC;  height: 30px;
+    width: 175px;
+    position: relative;
+    left:-10px;
+    z-index: 2;
+}
+
+  .ribbon-front,
+  .ribbon-back-left,
+  .ribbon-back-right
+{
+    -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+    -khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+    -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+    -o-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+}
+
+  .ribbon-edge-topleft,
+  .ribbon-edge-topright,
+  .ribbon-edge-bottomleft,
+  .ribbon-edge-bottomright {
+    position: absolute;
+    z-index: 1;
+    border-style:solid;
+    height:0px;
+    width:0px;
+}
+
+  .ribbon-edge-topleft,
+  .ribbon-edge-topright {
+}
+
+  .ribbon-edge-bottomleft,
+  .ribbon-edge-bottomright {
+    top: 30px;
+}
+
+  .ribbon-edge-topleft,
+  .ribbon-edge-bottomleft {
+    left: -10px;
+    border-color: transparent #B9B6AB transparent transparent;
+}
+
+  .ribbon-edge-topleft {
+    top: 0px;
+    border-width: 0px 10px 0 0;
+}
+  .ribbon-edge-bottomleft {
+    border-width: 0 10px 10px 0;
+}
+
+  .ribbon-edge-topright,
+  .ribbon-edge-bottomright {
+}
+
+  .ribbon-edge-topright {
+}
+  .ribbon-edge-bottomright {
+}
+
+  .ribbon-back-left {
+   
+}
+
+  .ribbon-back-right {
+    
+}
+
+/* ribbon style */
+
+ .ribbon-wrapper-right {
+    position: relative;
+    float: right;
+}
+  .ribbon-front-right {
+    background-color: #DCD9CC;  height: 30px;
+    width: 175px;
+    position: relative;
+    left:0px;
+    z-index: 2;
+}
+
+  .ribbon-front-right,
+  .ribbon-back-left-right,
+  .ribbon-back-right-right
+{
+    -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+    -khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+    -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+    -o-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+}
+
+  .ribbon-edge-topleft-right,
+  .ribbon-edge-topright-right,
+  .ribbon-edge-bottomleft-right,
+  .ribbon-edge-bottomright-right {
+    position: absolute;
+    z-index: 1;
+    border-style:solid;
+    height:0px;
+    width:0px;
+}
+
+  .ribbon-edge-topleft-right,
+  .ribbon-edge-topright-right {
+}
+
+  .ribbon-edge-bottomleft-right,
+  .ribbon-edge-bottomright-right {
+    top: 30px;
+}
+
+  .ribbon-edge-topleft-right,
+  .ribbon-edge-bottomleft-right {
+    left: 0px;
+    border-color: transparent #B9B6AB transparent transparent;
+}
+
+  .ribbon-edge-topleft-right {
+    top: 0px;
+    border-width: 0px 0px 0 0;
+}
+  .ribbon-edge-bottomleft-right {
+    border-width: 0 0px 0px 0;
+}
+
+  .ribbon-edge-topright-right,
+  .ribbon-edge-bottomright-right {
+    left: 165px;
+    border-color: transparent transparent transparent #B9B6AB;
+}
+
+  .ribbon-edge-topright-right {
+    top: 0px;
+    border-width: 0px 0 0 10px;
+}
+  .ribbon-edge-bottomright-right {
+    border-width: 0 0 10px 10px;
+}
+
+  .ribbon-back-left-right {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 30px;
+        z-index: 0;
+}
+
+  .ribbon-back-right-right {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    width: 0px;
+    height: 30px;
+        z-index: 0;
+}
+
+
 
 /* Footer
 -----------------------------------------------------------------------------*/
